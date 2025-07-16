@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Sports Tournament</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Gainsight PX Tag-->
+  <script type="text/javascript">
+  (function(n,t,a,e,co){var i="aptrinsic";n[i]=n[i]||function(){
+      (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
+    var r=t.createElement("script");r.async=!0,r.src=a+"?a="+e;
+    var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
+  })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-VOA4L8B9NFGB-2");
+
+  //passing user and account objects:
+aptrinsic("identify",
+  {
+  //User Fields
+    "id": "unique-user-id", // Required for logged in app users
+    "email": email,
+    "firstName": userName,
+    "lastName": "Raj",
+    "signUpDate": 1522697426479, //unix time in ms
+    "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
+    "price" : 95.5,
+    "userHash": "" // optional transient for HMAC identification
+  },
+  {
+  //Account Fields
+    "id":"IBM", //Required
+    "name":"International Business Machine",
+    "Program": "Platinum" // flat custom attributes
+ });
+</script>
+<!-- Gainsight PX Tag-->
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="welcome-text">Welcome, <span id="userName"></span>!</div>
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="welcome-container">
+        <h1>Enjoy the Tournament!</h1>
+
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="path/to/your/badminton-image.jpg" alt="Badminton" class="sport-image">
+                <p class="caption">Badminton</p>
+            </div>
+            <div class="image-container">
+                <img src="path/to/your/basketball-image.jpg" alt="Basketball" class="sport-image">
+                <p class="caption">Basketball</p>
+            </div>
+            <div class="image-container">
+                <img src="path/to/your/cricket-image.jpg" alt="Cricket" class="sport-image">
+                <p class="caption">Cricket</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <p>&copy; Prince</p>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const name = localStorage.getItem('userName');
+            document.getElementById('userName').textContent = name || 'Guest'; // Fallback in case name is not available
+        });
+
+        function logout() {
+            localStorage.removeItem('userName');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
