@@ -36,6 +36,12 @@
             </div>
         </div>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+document.getElementById('userName').textContent = loggedInUser.name || 'Guest';
+    });
+</script>
 
     <nav class="bottom-nav">
         <p>&copy; Prince</p>
