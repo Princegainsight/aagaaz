@@ -48,8 +48,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     "name":"Adobe System",
     "Program": "Platinum" // flat custom attributes
  });
-  
-  });
+});
 
 document.getElementById('userName').textContent = loggedInUser.name || 'Guest'; // Fallback in case name is not available
 
