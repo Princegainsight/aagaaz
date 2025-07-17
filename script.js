@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "name":"Adobe System",
     "Program": "Platinum" // flat custom attributes
  });
-
+document.getElementById('userName').textContent = loggedInUser.name || 'Guest';
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
 
