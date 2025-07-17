@@ -10,8 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const user = {
         name: name,       // You can adjust if needed
         email: email,
-        
-    };
+};
 
     // Store the entire user object in local storage
     localStorage.setItem('loggedInUser', JSON.stringify(user));
@@ -52,13 +51,4 @@ aptrinsic("identify",
     "Program": "Platinum" // flat custom attributes
  });
                  
-      
-   
-document.getElementById('userName').textContent = loggedInUser.name || 'Guest'; // Fallback in case name is not available
-
-//Log out Button function    
-function logout() {
-            localStorage.removeItem('userName');
-            window.location.href = 'index.html';
-        }
 
