@@ -1,36 +1,39 @@
 // PX Script Tag
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    
-    // Set the user name in an HTML element
+
+    // Add this line to check if there is a logged-in user and display their name
     if (loggedInUser) {
         document.getElementById('userName').textContent = loggedInUser.name || 'Guest';
+    } else {
+        document.getElementById('userName').textContent = 'Guest'; // Fallback in case user is not logged in
     }
 
+    // Existing Aptrinsic integration
     (function(n,t,a,e,co){
-        var i="aptrinsic";n[i]=n[i]||function(){
-        (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
+        var i="aptrinsic";
+        n[i]=n[i]||function(){
+            (n[i].q=n[i].q||[]).push(arguments)
+        },n[i].p=e,n[i].c=co;
         var r=t.createElement("script");r.async=!0;r.src=a+"?a="+e;
         var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
     })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-VOA4L8B9NFGB-2");
-    
+
     // PX Identify call
-    aptrinsic("identify",
-    {
+    aptrinsic("identify", {
         // User Fields
         "id": loggedInUser.email, // Required for logged in app users
         "email": loggedInUser.email,
         "firstName": loggedInUser.name,
         "lastName": "Raj",
-        "signUpDate": 1522697426479, //unix time in ms
-        "plan" : "gold", // Custom attributes - please create those custom attributes in Aptrinsic
-        "price" : 95.5,
+        "signUpDate": 1522697426479, // UNIX time in ms
+        "plan": "gold", // Custom attributes
+        "price": 95.5,
         "userHash": "" // optional transient for HMAC identification
-    },
-    {
+    }, {
         // Account Fields
-        "id":"Adobe", // Required
-        "name":"Adobe System",
+        "id": "Adobe", // Required
+        "name": "Adobe System",
         "Program": "Platinum" // flat custom attributes
     });
 
@@ -39,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the values from the input fields
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value; // Consider security
-        
+        const password = document.getElementById('password').value; // Account for security
+
         // Optional: Create a user object to store and log the user information
         const user = {
-            name: name,
-            email: email
+            name: name,       // You can adjust if needed
+            email: email,
         };
 
         // Store the entire user object in local storage
@@ -55,9 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Fallback in case name is not available
 // Log out Button function
 function logout() {
-    localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('loggedInUser'); // Removed 'userName' for consistency
     window.location.href = 'index.html';
-};
+}
