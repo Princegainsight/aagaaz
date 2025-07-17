@@ -27,10 +27,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-VOA4L8B9NFGB-2");
 
 
-//Login Button data
-  document.addEventListener('DOMContentLoaded', function() {
-            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-
 //PX Identify call
 aptrinsic("identify",
   {
@@ -50,5 +46,3 @@ aptrinsic("identify",
     "name":"Adobe System",
     "Program": "Platinum" // flat custom attributes
  });
-                 
-
