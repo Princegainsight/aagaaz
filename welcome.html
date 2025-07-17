@@ -17,9 +17,9 @@
 aptrinsic("identify",
   {
   //User Fields
-    "id": "unique-user-id", // Required for logged in app users
+    "id": email, // Required for logged in app users
     "email": email,
-    "firstName": userName,
+    "firstName": name,
     "lastName": "Raj",
     "signUpDate": 1522697426479, //unix time in ms
     "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
@@ -69,6 +69,7 @@ aptrinsic("identify",
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const name = localStorage.getItem('userName');
+            const email = localStorage.getItem('email');
             document.getElementById('userName').textContent = name || 'Guest'; // Fallback in case name is not available
         });
 
