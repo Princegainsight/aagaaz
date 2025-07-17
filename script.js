@@ -46,3 +46,8 @@ aptrinsic("identify",
     "name":"Adobe System",
     "Program": "Platinum" // flat custom attributes
  });
+
+//Login Button data
+  document.addEventListener('DOMContentLoaded', function() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  });
