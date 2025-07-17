@@ -27,8 +27,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-VOA4L8B9NFGB-2");
 
 
-//PX Identify call
-aptrinsic("identify",
+//Login Button data and PX Identify call
+  document.addEventListener('DOMContentLoaded', function() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+ aptrinsic("identify",
   {
   //User Fields
     "id": loggedInUser.email, // Required for logged in app users
@@ -46,10 +48,7 @@ aptrinsic("identify",
     "name":"Adobe System",
     "Program": "Platinum" // flat custom attributes
  });
-
-//Login Button data
-  document.addEventListener('DOMContentLoaded', function() {
-            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  
   });
 
 document.getElementById('userName').textContent = loggedInUser.name || 'Guest'; // Fallback in case name is not available
