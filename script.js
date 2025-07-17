@@ -30,6 +30,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 //Login Button data and PX Identify call
   document.addEventListener('DOMContentLoaded', function() {
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+document.getElementById('userName').textContent = loggedInUser.name || 'Guest';
  aptrinsic("identify",
   {
   //User Fields
@@ -50,7 +51,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
  });
 });
 
-document.getElementById('userName').textContent = loggedInUser.name || 'Guest'; // Fallback in case name is not available
+ // Fallback in case name is not available
 
 //Log out Button function    
 function logout() {
