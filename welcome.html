@@ -46,12 +46,13 @@
     var r=t.createElement("script");r.async=!0,r.src=a+"?a="+e;
     var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
   })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-YR0EQEB1VEKS-2");
-
+ document.getElementById('userName').textContent = loggedInUser.name || 'Guest'; // Fallback in case name is not available
+        });
            //passing user and account objects:
 aptrinsic("identify",
   {
   //User Fields
-    "id": loggedInUser.id, // Required for logged in app users
+    "id": loggedInUser.email, // Required for logged in app users
     "email": loggedInUser.email,
     "firstName": loggedInUser.name,
     "lastName": "Smith",
