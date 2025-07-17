@@ -29,6 +29,11 @@
         <p class="footer-text">Join us for an exciting tournament!</p>
     </div>
       <script>
+           function logout() {
+        localStorage.removeItem('userName'); // Remove user name from local storage
+        window.location.href = 'index.html'; // Redirect to the login page
+    };
+
     document.getElementById('userForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form submission
 
@@ -44,10 +49,7 @@
         // If the user confirms, show a thank you alert and redirect
         if (confirmation) {
             alert('Thank you for filling out the details!');
-            function logout() {
-            localStorage.removeItem('userName');
-            window.location.href = 'index.html';
-        };
+            logout();
         }
     });
          document.addEventListener('DOMContentLoaded', function() {
