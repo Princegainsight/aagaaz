@@ -51,3 +51,11 @@ aptrinsic("identify",
   document.addEventListener('DOMContentLoaded', function() {
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
   });
+
+document.getElementById('userName').textContent = loggedInUser.name || 'Guest'; // Fallback in case name is not available
+
+//Log out Button function    
+function logout() {
+            localStorage.removeItem('userName');
+            window.location.href = 'index.html';
+        };
