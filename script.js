@@ -31,25 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Redirect to welcome page
     window.location.href = 'welcome.html';
 const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-//PX Identify call
- aptrinsic("identify",
-  {
-  //User Fields
-    "id": loggedInUser.email, // Required for logged in app users
-    "email": loggedInUser.email,
-    "firstName": loggedInUser.name,
-    "lastName": "Raj",
-    "signUpDate": 1522697426479, //unix time in ms
-    "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
-    "price" : 95.5,
-    "userHash": "" // optional transient for HMAC identification
-  },
-  {
-  //Account Fields
-    "id":"Adobe", //Required
-    "name":"Adobe System",
-    "Program": "Platinum" // flat custom attributes
- });
+
 });
       });
 
