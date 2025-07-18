@@ -1,6 +1,6 @@
 //PX Script Tag
 document.addEventListener('DOMContentLoaded', function() {
-            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            
 (function(n,t,a,e,co){var i="aptrinsic";n[i]=n[i]||function(){
       
       (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
@@ -9,25 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-VOA4L8B9NFGB-2");
 
 
-//PX Identify call
- aptrinsic("identify",
-  {
-  //User Fields
-    "id": loggedInUser.email, // Required for logged in app users
-    "email": loggedInUser.email,
-    "firstName": loggedInUser.name,
-    "lastName": "Raj",
-    "signUpDate": 1522697426479, //unix time in ms
-    "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
-    "price" : 95.5,
-    "userHash": "" // optional transient for HMAC identification
-  },
-  {
-  //Account Fields
-    "id":"Adobe", //Required
-    "name":"Adobe System",
-    "Program": "Platinum" // flat custom attributes
- });
+
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
@@ -48,6 +30,26 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Redirect to welcome page
     window.location.href = 'welcome.html';
+const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+//PX Identify call
+ aptrinsic("identify",
+  {
+  //User Fields
+    "id": loggedInUser.email, // Required for logged in app users
+    "email": loggedInUser.email,
+    "firstName": loggedInUser.name,
+    "lastName": "Raj",
+    "signUpDate": 1522697426479, //unix time in ms
+    "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
+    "price" : 95.5,
+    "userHash": "" // optional transient for HMAC identification
+  },
+  {
+  //Account Fields
+    "id":"Adobe", //Required
+    "name":"Adobe System",
+    "Program": "Platinum" // flat custom attributes
+ });
 });
       });
 
