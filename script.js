@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "email": loggedInUser.email,
     "firstName": loggedInUser.name,
     "lastName": "Raj",
+     "LocationCity":"Patna",
     "signUpDate": 1522697426479, //unix time in ms
     "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
     "price" : 95.5,
