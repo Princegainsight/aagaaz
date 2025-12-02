@@ -38,60 +38,7 @@
         </div>
     </div>
 
-         <h2>Payment Status Selection</h2>
-
-    <!-- Form for selecting the payment status -->
-    <form action="" method="GET" style="max-width: 200px;">
-        <label for="payment" style="margin-bottom: 10px;">Select Payment Status:</label>
-        <!-- Dropdown list to select payment status -->
-        <select name="payment" id="payment" style="width: 100%; padding: 10px; cursor: pointer; border: 1px solid #dcdcdc;">
-            <option value="">--Select--</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-        
-        <!-- Submit button -->
-        <input type="submit" value="Submit" style="margin-top: 10px; padding: 10px; cursor: pointer;">
-    </form>
-
-    <!-- Static messages based on selection -->
-    <div style="margin-top: 20px;">
-        <div id="thank-you" style="display: none; margin-top: 10px;">Thank you for making the payment!</div>
-        <div id="sorry" style="display: none; margin-top: 10px;">Really sorry for that.</div>
-    </div>
-
-    <style>
-        /* Basic styling for messages */
-        #thank-you, #sorry {
-            font-weight: bold;
-            color: green; /* Default color for thank you message */
-        }
-
-        #sorry {
-            color: red; /* Different color for sorry message */
-        }
-
-        select {
-            margin-top: 10px;
-        }
-    </style>
-
-    <script>
-        // Just provided to clarify functionality
-        document.querySelector("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Preventing default form submission
-            const selectedValue = document.querySelector("#payment").value;
-
-            // Display appropriate message based on selection
-            if (selectedValue === "Yes") {
-                document.getElementById("thank-you").style.display = "block";
-                document.getElementById("sorry").style.display = "none";
-            } else if (selectedValue === "No") {
-                document.getElementById("sorry").style.display = "block";
-                document.getElementById("thank-you").style.display = "none";
-            }
-        });
-    </script>
+         
 <script>
     document.addEventListener('DOMContentLoaded', function() {
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
