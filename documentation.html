@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="./script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px 50px;
+            background-color: #f4f4f9;
+        }
+        .header {
+            background-color: #005f99;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section h2 {
+            color: #005f99;
+        }
+        code {
+            display: block;
+            background-color: #e8e8e8;
+            padding: 5px;
+            border-radius: 3px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+     <nav class="top-nav">
+        <div class="nav-container">
+            <div class="welcome-text">Welcome, <span id="userName"></span>!</div>
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+    <div class="header">
+        <h1>Documentation for Web Development Basics</h1>
+    </div>
+
+    <div class="section" id="html-section">
+        <h2>HTML</h2>
+        <p>HTML (Hypertext Markup Language) is used to structure content on the web.</p>
+        <h3>Basic Structure</h3>
+        <code>
+            &lt;!DOCTYPE html&gt;<br>
+            &lt;html&gt;<br>
+            &nbsp;&nbsp;&lt;head&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page Title&lt;/title&gt;<br>
+            &nbsp;&nbsp;&lt;/head&gt;<br>
+            &nbsp;&nbsp;&lt;body&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My First Heading&lt;/h1&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My first paragraph.&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/body&gt;<br>
+            &lt;/html&gt;
+        </code>
+        <p>HTML elements represent the building blocks of any website and include elements such as headings, paragraphs, links, and images.</p>
+    </div>
+
+    <div class="section" id="paragraph-section">
+        <h2>HTML Paragraph Tag</h2>
+        <p>The paragraph tag in HTML is used to define blocks of text as paragraphs, delineated with <code>&lt;p&gt;</code> tags.</p>
+        <h3>Example</h3>
+        <code>
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+            &lt;p&gt;This is another paragraph.&lt;/p&gt;
+        </code>
+        <p>Paragraphs automatically have some white space around them, making text easier to read.</p>
+    </div>
+
+    <div class="section" id="image-section">
+        <h2>Image Tag</h2>
+        <p>The <code>&lt;img&gt;</code> tag is used to embed images in an HTML document.</p>
+        <h3>Attributes</h3>
+        <ul>
+            <li><strong>src</strong> - The path to the image file.</li>
+            <li><strong>alt</strong> - Textual description of the image, which is crucial for accessibility and SEO.</li>
+        </ul>
+        <h3>Example</h3>
+        <code>
+            &lt;img src="path/to/image.jpg" alt="A description of the image"&gt;
+        </code>
+    </div>
+
+    <div class="section" id="css-section">
+        <h2>CSS</h2>
+        <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML.</p>
+        <h3>Basic Structure</h3>
+        <code>
+            selector &#123;<br>
+            &nbsp;&nbsp;property: value;<br>
+            &#125;
+        </code>
+        <h3>Example</h3>
+        <code>
+            body &#123;<br>
+            &nbsp;&nbsp;background-color: lightblue;<br>
+            &#125;<br>
+            <br>
+            h1 &#123;<br>
+            &nbsp;&nbsp;color: navy;<br>
+            &#125;
+        </code>
+        <p>By using CSS, you can manipulate the appearance of all elements on your site uniformly and easily.</p>
+    </div>
+
+    <div class="section" id="javascript-section">
+        <h2>JavaScript</h2>
+        <p>JavaScript is a high-level, interpreted scripting language that enables you to create dynamically updating content, control multimedia, and animate images.</p>
+        <h3>Basic Example</h3>
+        <code>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;document.getElementById("demo").innerHTML = "Hello JavaScript!";<br>
+            &lt;/script&gt;
+        </code>
+        <h3>Functions and Events</h3>
+        <code>
+            &lt;button onclick="myFunction()"&gt;Click me&lt;/button&gt;<br>
+            <br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;function myFunction() &#123;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert('Button clicked!');<br>
+            &nbsp;&nbsp;&#125;<br>
+            &lt;/script&gt;
+        </code>
+        <p>JavaScript enables interactivity on web pages, turning them into more dynamic, user-friendly experiences.</p>
+    </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+document.getElementById('userName').textContent = loggedInUser.name || 'Guest';
+    });
+</script>
+</body>
+</html>
